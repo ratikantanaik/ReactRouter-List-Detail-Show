@@ -1,5 +1,6 @@
 import React from 'react';
 import Contact from '../Contact/Contact';
+import Radium from 'radium';
 
 class ContactList extends React.Component{
     constructor(){
@@ -55,7 +56,11 @@ class ContactList extends React.Component{
             border: '1px solid black',
             padding: '8px',
             cursor: 'pointer',
-            color: 'white'
+            color: 'white',
+            ':hover': {
+                backgroundColor: 'lightgreen',
+                color: 'black'
+            }
         }
 
         const trStyle = {
@@ -67,7 +72,7 @@ class ContactList extends React.Component{
         const contacts = this.state.contacts.map((cont) => {
             return(
                 <tr style={trStyle}>
-                    <td><button style={btnStyle} onClick={this.showContact} value={cont.id} >{cont.id}</button> </td>
+                    <td><button key={cont.name} style={btnStyle} onClick={this.showContact} value={cont.id} >{cont.id}</button> </td>
                     <td>{cont.name}</td>
                     <td>{cont.email}</td>
                     <td>{cont.age}</td>
@@ -86,4 +91,4 @@ class ContactList extends React.Component{
     }
 }
 
-export default ContactList;
+export default Radium(ContactList);

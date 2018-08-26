@@ -47,11 +47,27 @@ class ContactList extends React.Component{
         ]})
     }
 
+    
+
     render(){
+        const btnStyle = {
+            backgroundColor: 'green',
+            border: '1px solid black',
+            padding: '8px',
+            cursor: 'pointer',
+            color: 'white'
+        }
+
+        const trStyle = {
+            backgroundColor: 'yellow',
+            border: '2px solid blue',
+            padding: '8px'
+        }
+
         const contacts = this.state.contacts.map((cont) => {
             return(
-                <tr>
-                    <td><button onClick={this.showContact} value={cont.id} >{cont.id}</button> </td>
+                <tr style={trStyle}>
+                    <td><button style={btnStyle} onClick={this.showContact} value={cont.id} >{cont.id}</button> </td>
                     <td>{cont.name}</td>
                     <td>{cont.email}</td>
                     <td>{cont.age}</td>

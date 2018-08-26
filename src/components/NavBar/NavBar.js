@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 class NavBar extends Component{
     render(){
+
+        const activeStyle = {
+            backgroundColor: 'red',
+            color: 'white'
+        }
+
         return(<ul>
-                <li><Link to='/about'>About</Link></li>
-                <li><Link to='/home'>Home</Link></li>
-                <li><Link to='/contacts'>Contacts</Link></li>
+                <li><NavLink activeStyle={activeStyle} to='/about'>About</NavLink></li>
+                <li><NavLink activeStyle={activeStyle} to='/home'>Home</NavLink></li>
+                <li><NavLink activeStyle={activeStyle} to='/contacts'>Contacts</NavLink></li>
             </ul>)
     }
 }

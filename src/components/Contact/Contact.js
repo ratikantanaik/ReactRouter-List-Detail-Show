@@ -2,11 +2,17 @@ import React from 'react';
 
 const Contact = (props) => {
     const contDetail = props.getContact();
-    console.dir(contDetail);
+
+    const style = {
+        backgroundColor: 'grey',
+        color: 'white',
+        border: '4px solid black',
+        padding: '5px'
+    }
 
     return (
         <table>
-            <tr>
+            <tr style={style}>
                 <td>ID: {contDetail.id}</td>
                 <td>Name: {contDetail.name}</td>
                 <td>Email: {contDetail.email}</td>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Contact = (props) => {
     const contDetail = props.getContact();
@@ -20,6 +21,11 @@ const Contact = (props) => {
             </tr>
         </table>
     )
+}
+
+// Gives you warning
+Contact.propTypes = {
+    getContact : PropTypes.func
 }
 
 export default Contact;

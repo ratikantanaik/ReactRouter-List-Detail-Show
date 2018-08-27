@@ -71,8 +71,8 @@ class ContactList extends React.Component{
 
         const contacts = this.state.contacts.map((cont) => {
             return(
-                <tr style={trStyle}>
-                    <td><button key={cont.name} style={btnStyle} onClick={this.showContact} value={cont.id} >{cont.id}</button> </td>
+                <tr key={cont.id} style={trStyle}>
+                    <td><button key={cont.id} style={btnStyle} onClick={this.showContact} value={cont.id} >{cont.id}</button> </td>
                     <td>{cont.name}</td>
                     <td>{cont.email}</td>
                     <td>{cont.age}</td>
@@ -81,9 +81,9 @@ class ContactList extends React.Component{
         })
         return(
             <div>
-                <table style={{border:1}}>
-                    {contacts}       
-                </table>
+                    <tbody style={{border:1}}>
+                        {contacts}       
+                    </tbody>
                 <hr></hr>
                 { this.state.showContactId? <Contact getContact={this.getContact}/> : null }
             </div>
